@@ -6,18 +6,12 @@ function MESH = ComputeForceVector(MESH, t)
     %TODO: Assembles point nodal force contribution (F)
     for k = 1:length(MESH.LOAD.Point)
         %TODO: Obtain the force information
-        nodes = MESH.LOAD.Point(k,1).node;
-        value = MESH.LOAD.Point(k,1).value(t);
-        dir   = MESH.LOAD.Point(k,1).dir;
     
         %TODO: Assembles each node force
         for m = 1:length(nodes)
             %Node information where force is applied
-            ntag = nodes(m);
-            dof  = MESH.NODE(ntag,1).total;
             
             %Assemble the force
-            F(dof,1) = F(dof,1) + value*dir';
         end
     end
 
