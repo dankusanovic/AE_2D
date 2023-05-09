@@ -53,6 +53,7 @@ function MESH = ParseSimulationData(modelpath)
                 A   = str2double(data{8});
                 I   = str2double(data{9});
                 eprop = [E, rho, A, I];
+            else
                 fprintf('The ELEMENT %s is not recognized!\n',ename);
             end
 
